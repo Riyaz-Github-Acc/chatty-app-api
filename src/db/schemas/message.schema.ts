@@ -1,7 +1,7 @@
 import { sql } from "drizzle-orm";
 import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
-import { usersTable } from "@/db/schemas/user.schema";
+import { usersTable } from "./user.schema.js";
 
 export const messagesTable = pgTable("messages", {
     id: uuid('id').default(sql`gen_random_uuid()`).primaryKey(),

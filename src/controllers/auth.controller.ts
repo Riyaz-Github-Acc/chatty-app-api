@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { ZodError } from 'zod/v4';
 
-import cloudinary from "@/config/cloudinary.config";
-import { createUser, getUserByEmail, updateUser } from '@/services/user.service';
-import { CreateUserProps, LoginUserProps } from "@/types/user.type";
-import { hashPassword, verifyPassword } from '@/utils/bcrypt';
-import { generateToken } from "@/utils/jwt";
-import { CreateUserSchema, LoginUserSchema } from '@/validators/user.validator';
+import cloudinary from "../config/cloudinary.config.js";
+import { createUser, getUserByEmail, updateUser } from "../services/user.service.js";
+import { CreateUserProps, LoginUserProps } from "../types/user.type.js";
+import { hashPassword, verifyPassword } from "../utils/bcrypt.js";
+import { generateToken } from "../utils/jwt.js";
+import { CreateUserSchema, LoginUserSchema } from "../validators/user.validator.js";
 
 export const signup = async (req: Request, res: Response): Promise<void> => {
     try {

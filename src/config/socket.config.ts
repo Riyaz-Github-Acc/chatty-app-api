@@ -2,7 +2,7 @@ import express from 'express';
 import http from 'http'
 import { Server } from 'socket.io';
 
-import { UserSocketMapProps } from '@/types/socket.type';
+import { UserSocketMapProps } from '../types/socket.type.js';
 
 const app = express();
 

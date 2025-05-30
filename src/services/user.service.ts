@@ -1,8 +1,8 @@
 import { eq, ne } from "drizzle-orm"
 
-import db from "@/db"
-import { usersTable } from "@/db/schemas/user.schema"
-import { CreateUserProps, UserDetailsProps } from "@/types/user.type"
+import db from "../db/index.js";
+import { usersTable } from "../db/schemas/user.schema.js";
+import { CreateUserProps, UserDetailsProps } from "../types/user.type.js";
 
 const userReturnFields = {
     id: usersTable.id,

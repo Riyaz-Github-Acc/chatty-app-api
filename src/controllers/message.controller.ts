@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
 import { ZodError } from 'zod/v4';
 
-import cloudinary from "@/config/cloudinary.config";
-import { getReceiverSocketId, io } from "@/config/socket.config";
-import { createMessage, getAllMessages } from "@/services/message.service";
-import { getAllUsers } from "@/services/user.service";
-import { CreateMessageSchema } from "@/validators/message.validator";
+import cloudinary from "../config/cloudinary.config.js";
+import { getReceiverSocketId, io } from "../config/socket.config.js";
+import { createMessage, getAllMessages } from "../services/message.service.js";
+import { getAllUsers } from "../services/user.service.js";
+import { CreateMessageSchema } from "../validators/message.validator.js";
+
 
 export const getUsersForSidebar = async (req: Request, res: Response): Promise<void> => {
     try {

@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 
-import { getUserById } from "@/services/user.service";
-import { verifyToken } from "@/utils/jwt";
+import { getUserById } from "../services/user.service.js";
+import { verifyToken } from "../utils/jwt.js";
 
 export const protectedRoute = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {

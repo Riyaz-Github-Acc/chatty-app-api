@@ -1,5 +1,6 @@
-import { messagesTable } from "@/db/schemas/message.schema";
-import { usersTable } from "@/db/schemas/user.schema";
+import { messagesTable } from "./message.schema.js";
+import { usersTable } from "./user.schema.js";
+
 
 export const schema = {
     usersTable,

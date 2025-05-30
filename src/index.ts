@@ -2,15 +2,12 @@ import 'dotenv/config';
 
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
-import express, { Request, Response } from 'express';
-import path from 'path';
+import express from 'express';
 
-import envConfig from '@/config/env.config';
-import { app, server } from '@/config/socket.config';
-import authRoutes from '@/routes/auth.route';
-import messageRoutes from '@/routes/message.route';
-
-const __dirname = path.resolve();
+import envConfig from './config/env.config.js';
+import { app, server } from './config/socket.config.js';
+import authRoutes from './routes/auth.route.js';
+import messageRoutes from './routes/message.route.js';
 
 app.use(express.json({ limit: '10mb' }));
 app.use(cookieParser());
@@ -21,13 +18,6 @@ app.use(cors({
 
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
-
-if (envConfig.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../frontend/dist')));
-    app.get('*', (req: Request, res: Response) => {
-        res.sendFile(path.join(__dirname, '../frontend', 'dist', 'index.html'))
-    })
-}
 
 server.listen(envConfig.PORT, () => {
     console.log(`💻 Server started to run on the port: ${envConfig.PORT}`);
