@@ -4,7 +4,7 @@
     "description": "This is a chat backend application built with Express and TypeScript.",
     "main": "dist/index.js",
     "scripts": {
-        "start": "node dist/index.js",
+        "start": "tsc && node dist/index.js",
         "dev": "tsx watch src/index.ts",
         "lint": "eslint . --ext .ts",
         "db-generate": "npx drizzle-kit generate",
